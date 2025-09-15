@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Golden Delicias</title>
+  <meta name="description" content="Página de postres: galletas y postres por encargo.">
+  <style>
+    /* RESET SIMPLE */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color: #000000; }
+
+    /* LAYOUT */
+    header { background: linear-gradient(90deg,#f5b404,#f5b404); padding: 18px 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+    .brand { display:flex; align-items:center; gap:14px; }
+    .logo { width:58px; height:58px; border-radius:12px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><rect rx="12" width="100%" height="100%" fill="%23000000"/><text x="50%" y="65%" font-size="30" text-anchor="middle" fill="%23eab205">GD</text></svg>') center/cover no-repeat; display:inline-block; }
+    h1 { font-size:1.35rem; margin:0; }
+    p.lead { margin:4px 0 0; font-size:0.95rem; opacity:0.9; }
+
+    nav { margin-top:12px; display:flex; gap:12px; flex-wrap:wrap; }
+    nav a { text-decoration:none; padding:8px 12px; border-radius:8px; font-weight:600; color:#000000; }
+    nav a.cta { background:#ffffff; color:rgb(0, 0, 0); }
+
+    /* HERO */
+    .hero { display:grid; grid-template-columns: 1fr 420px; gap:28px; align-items:center; margin-top:18px; }
+    .hero .text h2 { font-size:2rem; margin:0 0 10px; }
+    .hero .text p { margin:0 0 16px; line-height:1.5; }
+    .hero .cta-row { display:flex; gap:12px; }
+    .btn { padding:12px 18px; border-radius:10px; text-decoration:none; display:inline-block; font-weight:700; }
+    .btn.primary { background:#000000; color:white; }
+    .btn.ghost { border:2px solid #000000; color:#000000; background:transparent; }
+
+    .hero .image { border-radius:14px; overflow:hidden; box-shadow:0 10px 30px rgba(123,62,43,0.12); }
+    .hero .image img { width:100%; height:100%; display:block; object-fit:cover; min-height:260px; }
+
+    /* SECTIONS */
+    section { margin-top:40px; }
+    .grid { display:grid; gap:18px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+    .card { background:white; border-radius:12px; padding:14px; box-shadow:0 6px 18px rgba(0,0,0,0.05); }
+    .card img { width:100%; height:160px; object-fit:cover; border-radius:8px; }
+    .card h3 { margin:10px 0 6px; font-size:1.05rem; }
+    .card p { margin:0 0 8px; font-size:0.9rem; color:#000000; }
+    .price { font-weight:800; color:#f5b404; }
+
+    /* TESTIMONIOS */
+    .testimonials { display:flex; gap:14px; overflow:auto; padding-bottom:6px; }
+    .testimonial { min-width:260px; background:linear-gradient(180deg,#fff,#fff8f6); padding:14px; border-radius:12px; }
+
+    /* CONTACT */
+    form { display:grid; gap:10px; grid-template-columns: 1fr 1fr; }
+    form input, form textarea { padding:10px 12px; border-radius:8px; border:1px solid #e6d6d2; font-size:0.95rem; }
+    form textarea { grid-column: 1 / -1; min-height:110px; resize:vertical; }
+    form button { grid-column: 1 / -1; justify-self:start; padding:10px 16px; border-radius:10px; border:0; font-weight:800; background:#f5b404; color:rgb(0, 0, 0); }
+
+    footer { margin-top:48px; padding:24px 0; text-align:center; color:#6b6b6b; font-size:0.9rem; }
+
+    /* RESPONSIVE */
+    @media (max-width:900px){
+      .hero { grid-template-columns: 1fr; }
+      nav { gap:8px; }
+      form { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Golden Delicias</h1>
+          <p class="lead">Postres hechos con amor — pedidos por encargo</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#productos">Productos</a>
+        <a href="#galeria">Galería</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto" class="cta">Hacer pedido</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="text">
+        <h2>Donde cada bocado brilla con sabor.</h2>
+        <p>Galletas y postres individuales. Entregas locales y servicio para eventos pequeños.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#contacto">Pedir ahora</a>
+          <a class="btn ghost" href="#galeria">Ver galería</a>
+        </div>
+      </div>
+      <div class="image">
+        <img src="logo.webp" height="50" alt="Pastel decorado">
+      </div>
+    </section>
+
+    <section id="productos">
+      <h2>Productos destacados</h2>
+      <div class="grid" style="margin-top:14px;">
+        <article class="card">
+          <img src="1.jpg" alt="Torta de chocolate">
+          <h3>Mousse de maracuya</h3>
+          <p>Un postre suave y cremoso con un rico sabor a maracuya</p>
+          <div class="price">$5.000 COP</div>
+        </article>
+
+        <article class="card">
+          <img src="ramirez.jpg" alt="Cupcakes">
+          <h3>Cheesecake de mora</h3>
+          <p>Un postre delicioso hecho a base de mora y queso.</p>
+          <div class="price">$5.000 COP</div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Tartaleta de frutas">
+          <h3>Galletas
+          <p>Frescas y deliciosas para su consumo. </p>
+          <div class="price">$3.000 COP (unidad)</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <h2>Galería</h2>
+      <div class="grid" style="margin-top:14px;">
+        <!-- Puedes reemplazar las imágenes por tus propias fotos -->
+        <div class="card"><img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="galeria1"></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="galeria2"></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="galeria3"></div>
+      </div>
+    </section>
+
+    <section id="testimonios">
+      <h2>Testimonios</h2>
+      <div class="testimonials" style="margin-top:12px;">
+        <div class="testimonial card">
+          <strong>María P.</strong>
+          <p>"Los postres que pedí quedaron espectaculares. Sabores equilibrados y la decoración impecable."</p>
+        </div>
+        <div class="testimonial card">
+          <strong>Carlos R.</strong>
+          <p>"Entrega puntual y buen servicio. Las galletas fueron el éxito de la oficina."</p>
+        </div>
+        <div class="testimonial card">
+          <strong>Ana G.</strong>
+          <p>"Recomendados 100% — probamos los Mousse de maracuya y volveremos a pedir."</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto / Pedido</h2>
+      <p>Rellena el formulario para solicitar un presupuesto o realizar un pedido.</p>
+      <form action="#" method="post" onsubmit="alert('Formulario simulado: reemplaza la acción por tu endpoint o procesamiento en servidor.'); return false;">
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
+        <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" required>
+        <input type="email" name="email" placeholder="Correo electrónico">
+        <input type="text" name="producto" placeholder="Producto deseado (ej: postre de...)">
+        <textarea name="mensaje" placeholder="Detalles del pedido: fecha, ubicación, ..."></textarea>
+        <button type="submit">Enviar pedido</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Golden Delicias — Hecho con dedicación. &middot; Cel: 314 819 0309</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
